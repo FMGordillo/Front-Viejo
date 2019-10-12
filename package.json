@@ -4,20 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "  nodemon ./back/server.js",
+    "start": "react-scripts start",
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amatana/PartnersNetAr.git"
+    "url": "git+https://github.com/Partners-El-Bueno/Front-Viejo"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amatana/PartnersNetAr/issues"
+    "url": "https://github.com/Partners-El-Bueno/Front-Viejo/issues"
   },
-  "homepage": "https://github.com/amatana/PartnersNetAr#readme",
+  "homepage": "https://github.com/Partners-El-Bueno/Front-Viejo#readme",
   "dependencies": {
     "@types/dotenv": "^6.1.1",
     "axios": "^0.19.0",
@@ -43,20 +43,22 @@
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.2.0",
     "redux": "^4.0.4",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
     "sequelize": "^5.9.3"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.6",
-    "css-loader": "^3.2.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.35.2",
-    "webpack-cli": "^3.3.6"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

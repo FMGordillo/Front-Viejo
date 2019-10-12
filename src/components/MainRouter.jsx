@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React from "react";
 import { Route, Redirect, Switch, Link } from "react-router-dom";
 // import {} from 'react-redux'
@@ -11,9 +10,9 @@ import HaveNeed from "./HaveNeed";
 import Social from "./Social";
 import Project from "./Project";
 import Info from "./Info";
-import "../../back/public/css/style.css";
-import { fetchUser, getAllUsers } from '../redux/actions/index'
-import {connect} from 'react-redux';
+import "../styles/style.css";
+import { fetchUser, getAllUsers } from "../redux/actions/index";
+import { connect } from "react-redux";
 
 class MainRouter extends React.Component {
   constructor(props) {
@@ -24,10 +23,9 @@ class MainRouter extends React.Component {
     };
   }
 
-  componentDidMount(){
-    this.props.getAllUsers()
-    this.props.fetchUser()
-    .then(()=> this.setState({isRegistered : true}))
+  componentDidMount() {
+    this.props.getAllUsers();
+    this.props.fetchUser().then(() => this.setState({ isRegistered: true }));
   }
 
   render() {
@@ -53,13 +51,16 @@ class MainRouter extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   user: state.user,
-  users : state.users
+  users: state.users
 });
-const mapDispatchToProps = (dispatch) => ({
-  fetchUser: () => dispatch((fetchUser())),
-  getAllUsers: () => dispatch((getAllUsers()))
+const mapDispatchToProps = dispatch => ({
+  fetchUser: () => dispatch(fetchUser()),
+  getAllUsers: () => dispatch(getAllUsers())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainRouter);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MainRouter);

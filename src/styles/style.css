@@ -3,8 +3,8 @@
 @import url("_buttons.css");
 @import url("_grids.css");
 
-i{
-  font-family: "FontAwesome"
+i {
+  font-family: "FontAwesome";
 }
 
 html,
@@ -13,12 +13,12 @@ body {
   width: 100%;
 }
 
-.overlay{
+.overlay {
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  top:0;
+  top: 0;
   bottom: 0;
-  left:0;
+  left: 0;
   right: 0;
   display: flex;
   align-items: center;
@@ -26,49 +26,48 @@ body {
   visibility: hidden;
 }
 
-.overlay.active{
+.overlay.active {
   visibility: visible;
 }
 
-.popup{
+.popup {
   background-color: #f8f8f8;
-  box-shadow: 0px 1px 5px 0px rgba(0 , 0, 0, .4);
+  box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   font-family: "Nunito";
   padding: 28px;
   text-align: center;
   widows: 600px;
   opacity: 0;
-  transition: .3s ease all;
-  transform: scale(0.7)
+  transition: 0.3s ease all;
+  transform: scale(0.7);
 }
 
-.popup.active{
+.popup.active {
   opacity: 1;
   transform: scale(1);
-
 }
 
-.btn-cerrar{
+.btn-cerrar {
   font-size: 16px;
   line-height: 16px;
   display: block;
   text-align: right;
-  color: #BBBBBB;
-  transition: .3s ease all;
+  color: #bbbbbb;
+  transition: 0.3s ease all;
 }
 
-.btn-cerrar:hover{
-  color: #000
+.btn-cerrar:hover {
+  color: #000;
 }
 
-.popup button{
+.popup button {
   display: block;
   margin-bottom: 1rem;
   cursor: pointer;
 }
 
-.popup a{
+.popup a {
   text-decoration: none;
 }
 
@@ -76,7 +75,7 @@ body {
   height: inherit;
   width: inherit;
 }
-/*
+
 .tituloProyecto {
   font-weight: 700;
 }
@@ -86,7 +85,14 @@ body {
   border-radius: 50%;
   width: 10%;
 }
-/*
+
+/* .landingBackground {
+  min-height: 100%;
+  min-width: 100%;
+  background-color: blue;
+  text-align: center;
+} */
+
 .partners {
   border: 2px solid #fff;
   border-radius: 4px;
@@ -117,7 +123,7 @@ body {
   color: #ffffff;
   font-size: 36px;
   line-height: 40px;
-  /*text-Align:center;*//*
+  /*text-Align:center;*/
   margin: auto;
   font-family: "Nunito";
 }
@@ -129,7 +135,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   /*text-Align:center;
-    *//*
+    */
   margin: auto;
   margin-top: 20px;
   font-family: "Nunito";
@@ -137,7 +143,7 @@ body {
 
 .rectangleComenzar {
   height: 44px;
-  /* width: 288px; *//*
+  /* width: 288px; */
   border: 2px solid #ef4166;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0);
@@ -152,7 +158,7 @@ body {
   line-height: 19px;
   font-family: "Nunito";
 }
-*/
+
 [type="checkbox"] {
   display: none;
 }
@@ -170,8 +176,8 @@ body {
 
 .checkboxes:before {
   content: " ";
-  background-color: #eaeaea;
-  /* border: solid 1px #9e9e9e; */
+  border: solid 1px #9e9e9e;
+  border-radius: 50%;
   width: 0.9em;
   height: 0.9em;
   position: absolute;
@@ -193,18 +199,18 @@ body {
   -moz-column-count: 2; /* Firefox */
   column-count: 2;
 
-   -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
-  -moz-column-gap: 20px; /* Firefox */
-  column-gap: 20px;
+  /* -webkit-column-gap: 20px; /* Chrome, Safari, Opera */
+  /*-moz-column-gap: 20px; /* Firefox */
+  /*column-gap: 20px; */
 
-  -webkit-column-gap: 2rem; /* Chrome, Safari, Opera */
-  -moz-column-gap: 2rem; /* Firefox */
-  column-gap: 2rem;
+  /*-webkit-column-gap: 2rem; /* Chrome, Safari, Opera */
+  /*-moz-column-gap: 2rem; /* Firefox */
+  /*column-gap: 2rem;*/
 }
-/*
+
 .pregunta {
   height: 22px;
-  /*width: 171px;*//*
+  /*width: 171px;*/
   color: #9b9b9b;
   font-family: "Helvetica";
   font-size: 18px;
@@ -244,25 +250,25 @@ body {
   line-height: 19px;
   text-align: center;
 }
-*/
+
 .boxList {
+  margin: 0.2em;
+  border: 0.16em solid #ef4166;
+  border-radius: 4px;
   position: relative;
-  background: #eee;
-  text-align: center;
-  border-radius: 50px;
   display: inline-block;
-  border: transparent;
+}
+
+.textList {
+  background-color: #fbfbff;
+  color: #ef4166;
+  text-align: center;
   vertical-align: middle;
   font-weight: 600;
   margin: 0.5em;
   font-family: "Nunito";
-  min-width: 80px;
 }
 
-.textList {
-  margin: 0.5em;
-}
-/*
 .bienvenido {
   font-family: "Nunito";
   color: #044087;
@@ -296,7 +302,7 @@ body {
 
 .continuar {
   /* height: 72px;
-    width: 82px; *//*
+    width: 82px; */
   color: #044087;
   font-size: 18px;
   line-height: 36px;
@@ -308,7 +314,7 @@ body {
 .continuar:after {
   padding-left: 1em;
   /* border: solid 1px #9e9e9e;
-    border-radius:50%; *//*
+    border-radius:50%; */
   color: #ef4166;
   content: "\f061";
   font-family: "FontAwesome";
@@ -316,7 +322,7 @@ body {
 
 .back {
   /* height: 72px;
-    width: 82px; *//*
+    width: 82px; */
   color: #9b9b9b;
   font-size: 18px;
   line-height: 36px;
@@ -328,7 +334,7 @@ body {
 .back:before {
   padding-right: 1em;
   /* border: solid 1px #9e9e9e;
-    border-radius:50%; *//*
+    border-radius:50%; */
   color: #9b9b9b;
   content: "\f060";
   font-family: "FontAwesome";
@@ -344,14 +350,14 @@ option[selected] {
 
 .claseProyecto {
   /* height: 48px;
-    	width: 273px; *//*
+    	width: 273px; */
   color: #333333;
   font-size: 14px;
   font-style: italic;
   line-height: 24px;
   font-family: "Nunito";
 }
-*/
+
 .saveInterest {
   background-color: transparent;
   border: transparent;
@@ -363,19 +369,6 @@ option[selected] {
   font-family: "FontAwesome";
 }
 
-.uploadFile {
-  background-color: transparent;
-  border: transparent;
-}
-.uploadFile:before {
-  color: #ef4166;
-  content: "\f093";
-  font-size: 1.85em;
-  font-family: "FontAwesome";
-}
-
-
-/*
 .pitchProyecto {
   height: 56px;
   width: 617px;
@@ -396,18 +389,18 @@ option[selected] {
 
 .queTengo {
   /* height: 120px;
-    	width: 225px; *//*
+    	width: 225px; */
   color: rgb(163, 130, 130);
   font-size: 14px;
-  /* line-height: 30px; *//*
+  /* line-height: 30px; */
   font-family: "Nunito";
 }
 .queNecesito {
   /* height: 120px;
-    	width: 225px; *//*
+    	width: 225px; */
   color: #4a4a4a;
   font-size: 14px;
-  /* line-height: 30px; *//*
+  /* line-height: 30px; */
   font-family: "Nunito";
 }
 
@@ -462,7 +455,7 @@ option[selected] {
   background-color: transparent;
   font-family: "FontAwesome";
 }
-*/
+
 .inputFile {
   height: 45px;
   width: 331px;
@@ -484,7 +477,7 @@ option[selected] {
   font-size: 14px;
   font-family: "Helvetica";
 }
-/*
+
 .gridPhoto {
   display: grid;
   grid-template-columns: 0.3fr 0.7fr;
@@ -510,7 +503,7 @@ option[selected] {
   width: 5em;
   justify-self: center;
 }
-*//*
+
 .textList {
   justify-self: left;
   align-self: center;
@@ -528,8 +521,8 @@ option[selected] {
   text-align: left;
   margin: 0;
   font-size: 1.15em;
-}*/
-/*
+}
+
 .listTitle {
   padding-left: 1%;
 }
@@ -577,9 +570,8 @@ option[selected] {
 
 ul#bullet-check {
   list-style-image: url("../public/bullet-check.jpg");
-} *//*
+} */
 
 li {
   margin-top: 5px;
-} */
-
+}
