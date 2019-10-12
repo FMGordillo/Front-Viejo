@@ -1,11 +1,12 @@
 import { ADD_USER, ADD_PROJECT, SET_USER, SET_USERS } from "./actionTypes";
-import axios from 'axios';
+import axios from "axios";
+
+const MAIN_API = "http://localhost:4000";
 
 /**
  * ACTION CREATORS
- * 
+ *
  */
-
 
 /**
  * TODO: Definir el shape del objeto
@@ -18,16 +19,15 @@ function createUser(user) {
   };
 }
 
-const setUser = (user) => ({
+const setUser = user => ({
   type: SET_USER,
   user
 });
 
-const setUsers = (users) => ({
+const setUsers = users => ({
   type: SET_USERS,
   users
 });
-
 
 function createProject(project) {
   return {
@@ -40,21 +40,21 @@ function createProject(project) {
  *
  * @param {*} id
  */
-export const  fetchProject = (id = "") => {
+export const fetchProject = (id = "") => {
   return [
     {
       "project-id": ""
     }
   ];
-}
+};
 export const fetchUser = () => dispatch =>
-axios.get('/api/users/user')
-  .then(res =>  res.data)
-  .then(user => dispatch(setUser(user)));
+  axios
+    .get(`${MAIN_API}/api/users/user`)
+    .then(res => res.data)
+    .then(user => dispatch(setUser(user)));
 
-  export const getAllUsers = () => dispatch =>
-  axios.get('/api/users')
+export const getAllUsers = () => dispatch =>
+  axios
+    .get(`${MAIN_API}/api/users`)
     .then(res => res.data)
     .then(users => dispatch(setUsers(users)));
-
-  
