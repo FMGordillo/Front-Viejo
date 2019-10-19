@@ -1,14 +1,13 @@
 import React from "react";
 
 export default ({ list = [], title }) => (
-  <div >
+  <div>
     <h2 className="listTitle">{title || "List Title"}</h2>
 
     {list.map((item, key) => (
       <div key={key++} className="gridPhoto">
         <div className="roundedPhoto colorTrial" />
         <div className="textList">
-
           <h2>Nombre de la Cosa</h2>
           <h2>{item}</h2>
 
@@ -18,4 +17,3 @@ export default ({ list = [], title }) => (
     ))}
   </div>
 );
-

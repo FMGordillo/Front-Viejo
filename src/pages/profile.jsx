@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import ListaComponent from "./ListaReut";
-import HaveNeed from "./HaveNeed";
-import Social from "../pages/social";
+import ListaComponent from "../components/ListaReut";
+import Social from "./social";
 
 class Profile extends Component {
   render() {
@@ -21,7 +20,7 @@ class Profile extends Component {
             <div className="gridPhoto">
               <div className="roundedPhoto colorTrial" />
               <div className="textList">
-                <h2>Mupey</h2>
+                <h2>Hola Pepito!</h2>
                 <p>Especialidad</p>
               </div>
             </div>
@@ -35,13 +34,15 @@ class Profile extends Component {
             {Social({})}
           </div>
           <div className="aside">
-            <div className="Box-content">{HaveNeed({})}</div>
+            <div className="Box-content">
+              {ListaComponent({
+                list: ["a", "b", "c", "d"],
+                title: "Proyectos"
+              })}
+            </div>
           </div>
 
           <div className="aside2">
-            <div className="Box-content">
-              {ListaComponent({ title: "Estado del \r\nproyecto" })}
-            </div>
             <div className="Box-content">
               {ListaComponent({
                 list: ["a", "b", "c", "d"],

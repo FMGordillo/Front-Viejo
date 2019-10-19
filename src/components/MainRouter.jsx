@@ -1,18 +1,18 @@
 import React from "react";
-import { Route, Redirect, Switch, Link } from "react-router-dom";
-// import {} from 'react-redux'
-import Landing from "./LandingForm";
-import MainForm from "./Register/MainForm";
+import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import Landing from "../pages";
+import Info from "../pages/info";
+import Social from "../pages/social";
+import Profile from "../pages/profile";
+import MainForm from "../pages/register";
+
 import MainProy from "./Project/MainProy";
-import Profile from "./Profile";
 import ListaComponent from "./ListaReut";
 import HaveNeed from "./HaveNeed";
-import Social from "./Social";
 import Project from "./Project";
-import Info from "./Info";
 import "../styles/style.css";
 import { fetchUser, getAllUsers } from "../redux/actions/index";
-import { connect } from "react-redux";
 
 class MainRouter extends React.Component {
   constructor(props) {
@@ -34,18 +34,20 @@ class MainRouter extends React.Component {
     ) : (
       <Switch>
         <Route exact path="/" component={Landing} />
+        <Route exact path="/info" component={Info} />
+        <Route exact path="/social" component={Social} />
+        <Route exact path="/profile" component={Profile} />
         <Route
           exact
           path="/register"
           render={({ history }) => <MainForm history={history} />}
         />
+        {/* TODO */}
         <Route exact path="/register/proyect" component={MainProy} />
-        <Route exact path="/profile" component={Profile} />
+        {/* TODO */}
         <Route exact path="/listComp" component={ListaComponent} />
         <Route exact path="/haveNeed" component={HaveNeed} />
-        <Route exact path="/social" component={Social} />
         <Route exact path="/project" component={Project} />
-        <Route exact path="/info" component={Info} />
       </Switch>
     );
   }

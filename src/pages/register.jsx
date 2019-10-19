@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import EmailDetails from "./EmailDetails";
-import UserDetails from "./UserDetails";
-import AccountDetails from "./AccountsDetails";
-import PitchDetails from "./PitchDetails";
-import BioDetails from "./BioDetails";
-import TypeDetails from "./TypeDetails";
-import PersonalDetails from "./PersonalDetails";
-import Confirmation from "./Confirmation";
-import Success from "./Success";
+import EmailDetails from "../components/Register/EmailDetails";
+import UserDetails from "../components/Register/UserDetails";
+import AccountDetails from "../components/Register/AccountsDetails";
+import PitchDetails from "../components/Register/PitchDetails";
+import BioDetails from "../components/Register/BioDetails";
+import TypeDetails from "../components/Register/TypeDetails";
+import PersonalDetails from "../components/Register/PersonalDetails";
+import Confirmation from "../components/Register/Confirmation";
+import Success from "../components/Register/Success";
 
 // import "../../../back/public/style.css";
 
@@ -66,8 +66,8 @@ class MainForm extends Component {
 
   handleChange(event) {
     // console.log(this.state);
-    event.target.style.color= 'black'
-    event.target.style.borderBottomColor= 'black'
+    event.target.style.color = "black";
+    event.target.style.borderBottomColor = "black";
     if (event.target.type !== "checkbox") {
       this.setState({
         [event.target.attributes.name.nodeValue]: event.target.value
