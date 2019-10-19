@@ -1,8 +1,9 @@
 import React from "react";
 import axe from "react-axe";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+
 import Main from "./components/MainRouter";
 
 import store from "./redux/store";

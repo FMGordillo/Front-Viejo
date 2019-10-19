@@ -4,21 +4,18 @@ import axios from "axios";
 const MAIN_API = "http://localhost:4000";
 
 /**
- * ACTION CREATORS
- *
- */
-
-/**
  * TODO: Definir el shape del objeto
  * @param {Object} user
  */
-function createUser(user) {
-  return {
-    type: ADD_USER,
-    user
-  };
-}
+const createUser = user => ({
+  type: ADD_USER,
+  user
+});
 
+const createProject = project => ({
+  type: ADD_PROJECT,
+  project
+});
 const setUser = user => ({
   type: SET_USER,
   user
@@ -28,13 +25,6 @@ const setUsers = users => ({
   type: SET_USERS,
   users
 });
-
-function createProject(project) {
-  return {
-    type: ADD_PROJECT,
-    project
-  };
-}
 
 /**
  *
@@ -47,6 +37,10 @@ export const fetchProject = (id = "") => {
     }
   ];
 };
+
+/**
+ * TODO: Improve it when Auth0 is implemented
+ */
 export const fetchUser = () => dispatch =>
   axios
     .get(`${MAIN_API}/api/users/user`)
