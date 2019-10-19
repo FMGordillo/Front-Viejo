@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Felicitaciones from "./Felicitaciones";
+import Felicitaciones from "./Congratulations";
 
-class NeedProy extends Component {
+class PitchDetails extends Component {
   constructor(props) {
     super(props);
 
@@ -13,7 +13,7 @@ class NeedProy extends Component {
     e.preventDefault();
     const input = document.getElementsByClassName("textarea")[0];
     // console.log(input)
-    if (input.value !== "") {
+    if (input.value != "") {
       // console.log('Continue')
       this.props.nextStep();
     } else {
@@ -35,13 +35,11 @@ class NeedProy extends Component {
       <div>
         <Felicitaciones />
         <form action="">
-          <p className="pregunta">
-            8. Enumera los "necesito" del proyecto hasta ahora
-          </p>
+          <p className="pregunta">3. De que se trata {values.nameProy}? </p>
           <textarea
             className="textarea"
             type="text"
-            name="needProy"
+            name="infoProy"
             onChange={this.props.handleChange}
             defaultValue={values.pitch}
           />
@@ -59,4 +57,4 @@ class NeedProy extends Component {
   }
 }
 
-export default NeedProy;
+export default PitchDetails;

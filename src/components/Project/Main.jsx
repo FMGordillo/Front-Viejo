@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import Achievements from "./Achievements";
-import NameProy from "./NameProy";
-import ImageProy from "./ImageProy";
-import InfoProy from "./InfoProy";
-import HaveProy from "./HaveProy";
-import NeedProy from "./NeedProy";
-import PhraseProy from "./PhraseProy";
-import PitchProy from "./PitchProy";
-import TeamProy from "./TeamProy";
-import TypeProy from "./TypeProy";
-import Confirmation from "./ConfirmationProy";
+import NameProy from "./Name";
+import ImageProy from "./Image";
+import InfoProy from "./Info";
+import HaveProy from "./HaveProj";
+import NeedProy from "./NeedProj";
+import PhraseProy from "./Phrase";
+import PitchProy from "./Pitch";
+import TeamProy from "./Team";
+import TypeProy from "./Type";
+import Confirmation from "./Confirmation";
 
 // import "../../../back/public/style.css";
 
-class MainProy extends Component {
+class MainProj extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -57,8 +57,8 @@ class MainProy extends Component {
   }
 
   handleChange(event) {
-    event.target.style.color= 'black'
-    event.target.style.borderBottomColor= 'black'
+    event.target.style.color = "black";
+    event.target.style.borderBottomColor = "black";
     if (event.target.type !== "checkbox") {
       this.setState({ [event.target.name]: event.target.value });
     } else {
@@ -229,4 +229,4 @@ class MainProy extends Component {
   }
 }
 
-export default MainProy;
+export default MainProj;

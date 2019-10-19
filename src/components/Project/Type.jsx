@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Felicitaciones from "./Felicitaciones";
+import Congratulations from "./Congratulations";
 
-class PhraseProy extends Component {
+class TypeProy extends Component {
   constructor(props) {
     super(props);
 
@@ -33,15 +33,15 @@ class PhraseProy extends Component {
 
     return (
       <div>
-        <Felicitaciones />
+        <Congratulations />
         <form action="">
-          <p className="pregunta">5. Contanos tu proyecto en una frase</p>
+          <p className="pregunta">2. Tipo de proyecto</p>
           <input
             className="input"
             type="text"
-            name="phraseProy"
+            name="typeProy"
             onChange={this.props.handleChange}
-            defaultValue={values.email}
+            defaultValue={values.typeProy}
           />
           <div>
             <button className="back" onClick={this.back}>
@@ -57,4 +57,4 @@ class PhraseProy extends Component {
   }
 }
 
-export default PhraseProy;
+export default TypeProy;

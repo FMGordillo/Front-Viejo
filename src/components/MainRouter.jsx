@@ -1,16 +1,18 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
+
 import Landing from "../pages";
 import Info from "../pages/info";
+import About from "../pages/about";
 import Social from "../pages/social";
 import Profile from "../pages/profile";
 import MainForm from "../pages/register";
 
-import MainProy from "./Project/MainProy";
-import ListaComponent from "./ListaReut";
-import HaveNeed from "./HaveNeed";
 import Project from "./Project";
+import HaveNeed from "./HaveNeed";
+import MainProj from "./Project/Main";
+import ListaComponent from "./ListaReut";
 import "../styles/style.css";
 import { fetchUser, getAllUsers } from "../redux/actions/index";
 
@@ -24,8 +26,9 @@ class MainRouter extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getAllUsers();
-    this.props.fetchUser().then(() => this.setState({ isRegistered: true }));
+    // TODO: Check logged user here
+    // this.props.getAllUsers();
+    // this.props.fetchUser().then(() => this.setState({ isRegistered: true }));
   }
 
   render() {
@@ -35,6 +38,7 @@ class MainRouter extends React.Component {
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/info" component={Info} />
+        <Route exact path="/about" component={About} />
         <Route exact path="/social" component={Social} />
         <Route exact path="/profile" component={Profile} />
         <Route
@@ -43,7 +47,7 @@ class MainRouter extends React.Component {
           render={({ history }) => <MainForm history={history} />}
         />
         {/* TODO */}
-        <Route exact path="/register/proyect" component={MainProy} />
+        <Route exact path="/register/proyect" component={MainProj} />
         {/* TODO */}
         <Route exact path="/listComp" component={ListaComponent} />
         <Route exact path="/haveNeed" component={HaveNeed} />

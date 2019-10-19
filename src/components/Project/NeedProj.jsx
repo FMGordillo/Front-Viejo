@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Felicitaciones from "./Felicitaciones";
+import Felicitaciones from "./Congratulations";
 
-class HaveProy extends Component {
+class NeedProy extends Component {
   constructor(props) {
     super(props);
 
@@ -36,12 +36,12 @@ class HaveProy extends Component {
         <Felicitaciones />
         <form action="">
           <p className="pregunta">
-            7. Enumera los "tengo" del proyecto hasta ahora
+            8. Enumera los "necesito" del proyecto hasta ahora
           </p>
           <textarea
             className="textarea"
             type="text"
-            name="haveProy"
+            name="needProy"
             onChange={this.props.handleChange}
             defaultValue={values.pitch}
           />
@@ -59,4 +59,4 @@ class HaveProy extends Component {
   }
 }
 
-export default HaveProy;
+export default NeedProy;

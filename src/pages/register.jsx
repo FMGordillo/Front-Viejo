@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import EmailDetails from "../components/Register/EmailDetails";
-import UserDetails from "../components/Register/UserDetails";
-import AccountDetails from "../components/Register/AccountsDetails";
-import PitchDetails from "../components/Register/PitchDetails";
-import BioDetails from "../components/Register/BioDetails";
-import TypeDetails from "../components/Register/TypeDetails";
-import PersonalDetails from "../components/Register/PersonalDetails";
-import Confirmation from "../components/Register/Confirmation";
 import Success from "../components/Register/Success";
+import BioDetails from "../components/Register/BioDetails";
+import UserDetails from "../components/Register/UserDetails";
+import TypeDetails from "../components/Register/TypeDetails";
+import EmailDetails from "../components/Register/EmailDetails";
+import Confirmation from "../components/Register/Confirmation";
+import PitchDetails from "../components/Register/PitchDetails";
+import AccountDetails from "../components/Register/AccountsDetails";
+import PersonalDetails from "../components/Register/PersonalDetails";
 
 // import "../../../back/public/style.css";
 

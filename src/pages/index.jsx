@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-//import { Link, Redirect } from "react-router-dom";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import partnersBN from "../img/partnersBN.svg";
 import styled, { css } from "styled-components";
 
@@ -60,63 +60,78 @@ const Button = styled.button`
       `)}
 `;
 
-class LandingForm extends Component {
-  constructor(props) {
-    super(props);
-    // btnAbrir = document.getElementbyId('join-register'),
+const MainInteractionButton = css`
+  font-family: "Nunito";
+  font-size: 18px;
+  line-height: 36px;
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+`;
 
-    // cerrarPopup = document.getElementById('btn-cerrar');
-    this.registrarse = this.registrarse.bind(this);
-    this.cerrarPop = this.cerrarPop.bind(this);
+const BackButton = styled.a`
+  ${MainInteractionButton}
+  color: #9b9b9b;
+  float: left;
+  &:before {
+    /* TODO: FontAwesome */
   }
-  registrarse() {
-    let overlay = document.getElementsByClassName("overlay")[0],
-      popup = document.getElementsByClassName("popup")[0];
-    overlay.classList.add("active");
-    popup.classList.add("active");
-  }
+`;
 
-  cerrarPop() {
-    let overlay = document.getElementsByClassName("overlay")[0],
-      popup = document.getElementsByClassName("popup")[0];
-    overlay.classList.remove("active");
-    popup.classList.remove("active");
-  }
+const ContinueButton = styled.button`
+  ${MainInteractionButton}
+  color: #044087;
+  float: right;
+`;
 
-  render() {
-    return (
-      <Content>
-        <div className="center">
-          <img src={partnersBN} width="90px" height="35px" alt="Partners" />
-          <h1>
-            Build together,
-            <br />
-            <b>Ship together.</b>
-          </h1>
-          <p>
-            Partners es una red social colaborativa que conecta emprendedores
-            con ganas de crecer y y potenciar sus proyectos.
-            <br />
-            En este espacio vas a poder compartir tus proyectos, dar y recibir
-            feedback de otros emprendedores. Intercambiar conocimientos y
-            promover una cultura colaborativa.
-          </p>
-          <div className="back">Quiero saber mas</div>
-          <div
-            className="continuar"
-            id="join-register"
-            onClick={this.registrarse}
-          >
-            Quiero unirme
-          </div>
+const LandingForm = () => {
+  const [isOverlayOpen, setOverlay] = useState(false);
+  const [isPopupOpen, setPopup] = useState(false);
+
+  const registrarse = () => {
+    setOverlay(true);
+    setPopup(true);
+  };
+
+  const cerrarPop = () => {
+    setOverlay(false);
+    setPopup(false);
+  };
+
+  return (
+    <Content>
+      <div className="center">
+        <img src={partnersBN} width="90px" height="35px" alt="Partners" />
+        <h1>
+          Build together,
+          <br />
+          <b>Ship together.</b>
+        </h1>
+        <p>
+          Partners es una red social colaborativa que conecta emprendedores con
+          ganas de crecer y y potenciar sus proyectos.
+          <br />
+          En este espacio vas a poder compartir tus proyectos, dar y recibir
+          feedback de otros emprendedores. Intercambiar conocimientos y promover
+          una cultura colaborativa.
+        </p>
+        <Link to="/about">
+          <BackButton>Quiero saber mas</BackButton>
+        </Link>
+        <div className="continuar" id="join-register" onClick={registrarse}>
+          Quiero unirme
         </div>
-        <Modal cerrarPop={this.cerrarPop} />
-      </Content>
-    );
-  }
-}
+      </div>
+      <Modal
+        cerrarPop={cerrarPop}
+        isOverlayOpen={isOverlayOpen}
+        isPopupOpen={isPopupOpen}
+      />
+    </Content>
+  );
+};
 
-const CloseButton = styled.a`
+const CloseButton = styled.button`
   font-size: 16px;
   line-height: 16px;
   display: block;
@@ -125,14 +140,16 @@ const CloseButton = styled.a`
   transition: 0.3s ease all;
 `;
 
-const Modal = ({ cerrarPop }) => (
-  <div className="overlay">
-    <div className="popup">
-      <CloseButton href="#" onClick={cerrarPop}>
-        <i className="fas fa-times"></i>
-      </CloseButton>
-      <Button google>Registrate con Google</Button>
-      <Button facebook>Registrate con Facebook</Button>
+const Modal = ({ cerrarPop, isOverlayOpen, isPopupOpen }) => (
+  <div className={`overlay ${(isOverlayOpen && "active") || ""}`}>
+    <div className={`popup ${(isPopupOpen && "active") || ""}`}>
+      <CloseButton onClick={cerrarPop}>Close</CloseButton>
+      <Link to="/register">
+        <Button google>Registrate con Google</Button>
+      </Link>
+      <Link to="/register">
+        <Button facebook>Registrate con Facebook</Button>
+      </Link>
     </div>
   </div>
 );

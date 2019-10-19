@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Felicitaciones from "./Felicitaciones";
+import Felicitaciones from "./Congratulations";
 
 class ImageProy extends Component {
   constructor(props) {
@@ -8,25 +8,14 @@ class ImageProy extends Component {
     this.saveAndContinue = this.saveAndContinue.bind(this);
     this.back = this.back.bind(this);
     this.save = this.save.bind(this);
-    // this.postFile = this.postFile.bind(this)
   }
-
-  // async postFile(photo){
-  //     console.log(photo)
-  //     const res = await fetch(this.URI,{
-  //         method: 'POST',
-  //         body: photo
-  //     })
-  //     const data = await res.json()
-  //     console.log(data)
-  // }
 
   saveAndContinue(e) {
     e.preventDefault();
     const input = document.getElementById("fileUpload");
-    const photo = input.files;
-    //this.postFile(photo)
-    this.props.handleFile(input, photo);
+    const file = input.files;
+    //this.postFile(file)
+    this.props.handleFile(input, file);
     this.props.nextStep();
   }
   back(e) {
@@ -37,7 +26,6 @@ class ImageProy extends Component {
   save(e) {
     e.preventDefault();
     const input = document.getElementById("fileUpload");
-    // console.log(this.props)
     //this.props.handleInterest(input)
     // input.value= ''
     const div = document.getElementById("value");
@@ -45,7 +33,7 @@ class ImageProy extends Component {
   }
 
   render() {
-    //const { values } = this.props;
+    //const {values}=this.props
     //     const interest =values.interesting
 
     //     const list = interest.map((interest,i)=>{
@@ -60,13 +48,13 @@ class ImageProy extends Component {
       <div>
         <Felicitaciones />
         <form>
-          <p className="pregunta">4. Subi una imagen</p>
+          <p className="pregunta">6. Subi tu pitch</p>
           <input
             className="inputFile"
             id="fileUpload"
             type="file"
-            name="imageProy"
-            accept="image/*"
+            name="pitchProy"
+            accept="audio/*"
             onChange={this.save}
           />
 

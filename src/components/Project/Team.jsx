@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import Congratulations from "../Project/Congratulations";
+import Felicitaciones from "./Congratulations";
 
-class TypeProy extends Component {
+class TeamProy extends Component {
   constructor(props) {
     super(props);
 
     this.saveAndContinue = this.saveAndContinue.bind(this);
     this.back = this.back.bind(this);
-    this.enter = this.enter.bind(this);
+    this.save = this.save.bind(this);
   }
 
   saveAndContinue(e) {
@@ -19,30 +19,43 @@ class TypeProy extends Component {
     this.props.prevStep();
   }
 
-  enter(e) {
+  save(e) {
     e.preventDefault();
-    if (e.keyCode === 13) {
-      console.log("next");
-      document.getElementsByClassName("continuar")[0].click();
-    }
+    const input = document.getElementById("inpInt");
+    this.props.handleInterest(input);
+    input.value = "";
   }
 
   render() {
     const { values } = this.props;
+    const teamProy = values.teamProy;
+
+    const list = teamProy.map((team, i) => {
+      return (
+        <div key={i} className="boxList">
+          <p className="textList">{team}</p>
+        </div>
+      );
+    });
 
     return (
       <div>
-        <Congratulations />
-        <form action="">
-          <p className="pregunta">3. LinkedIn</p>
+        <Felicitaciones />
+        <form>
+          <p className="pregunta">
+            9.Integrantes del equipo (ingresa el perfil de Linkedin)
+          </p>
           <input
             className="input"
+            id="inpInt"
             type="text"
-            name="account"
-            onChange={this.props.handleChange}
-            // onKeyDown = {this.enter}
-            defaultValue={values.account}
+            defaultValue={values.teamProy}
           />
+          <button className="saveInterest" onClick={this.save}></button>
+
+          <br />
+          {list}
+
           <div>
             <button className="back" onClick={this.back}>
               Ver pregunta anterior
@@ -56,5 +69,4 @@ class TypeProy extends Component {
     );
   }
 }
-
-export default TypeProy;
+export default TeamProy;
