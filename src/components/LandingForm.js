@@ -43,14 +43,14 @@ class LandingForm extends Component {
             feedback de otros emprendedores. Intercambiar conocimientos y
             promover una cultura colaborativa.
           </p>
-          <div className="back">Quiero saber mas</div>
           <div
             className="continuar "
             id="join-register"
-            onClick={this.registrarse}
-          >
-            Quiero unirme
+            onClick={this.registrarse}>
+              Quiero unirme
           </div>
+          <div className="back"
+          >Quiero saber mas</div>
         </div>
 
         <div className="overlay">
