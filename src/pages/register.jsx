@@ -59,11 +59,11 @@ class MainForm extends Component {
   }
   prevStep() {
     const { step, type } = this.state;
-    if (type === 'ORG') {
+    if (type === "ORG") {
       this.setState({
         step: step - 2
       });
-    }else{
+    } else {
       this.setState({
         step: step - 1
       });
@@ -82,11 +82,11 @@ class MainForm extends Component {
     }
     if (event.target.attributes.name.nodeValue === "type") {
       const { step } = this.state;
-      if (event.target.attributes.value.value === 'ORG') {
+      if (event.target.attributes.value.value === "ORG") {
         this.setState({
           step: step + 2
         });
-      }else{
+      } else {
         this.setState({
           step: step + 1
         });
