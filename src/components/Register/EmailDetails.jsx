@@ -9,13 +9,19 @@ class EmailDetails extends Component{
       } 
    
     
-    saveAndContinue(e){
+      saveAndContinue(e){
         e.preventDefault()
         const input = document.getElementsByClassName('input')[0]
         // console.log(input)
-        if(input.value != ''){
+        if(input.value !== ''){
             // console.log('Continue')
+            if (/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)$/i.test(input.value)){
             this.props.nextStep()
+            }else{
+                input.style.color = 'red'
+                input.placeholder = 'please, complete with a valid email'
+                input.style.borderBottomColor = 'red'
+            }
         }else{
             // console.log('dont continue')
             input.style.color = 'red'

@@ -15,6 +15,7 @@ import MainProj from "./Project/Main";
 import ListaComponent from "./ListaReut";
 import "../styles/style.css";
 import { fetchUser, getAllUsers } from "../redux/actions/index";
+// import { useAuth0 } from "../react-auth0-spa"
 
 class MainRouter extends React.Component {
   constructor(props) {

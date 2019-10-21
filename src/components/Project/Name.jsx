@@ -12,7 +12,7 @@ class NameProy extends Component {
     e.preventDefault();
     const input = document.getElementsByClassName("input")[0];
     // console.log(input)
-    if (input.value != "") {
+    if (input.value !== "") {
       // console.log('Continue')
       this.props.nextStep();
     } else {
