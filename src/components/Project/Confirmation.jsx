@@ -52,11 +52,11 @@ class Confirmation extends Component {
     formData.append("teamProy", this.teamProy);
     // console.log(this.pitchProy)
     // console.log('finish',formData)
-    const res = await fetch(this.URI, {
-      method: "POST",
-      body: formData
-    });
-    const data = await res.json();
+    // const res = await fetch(this.URI, {
+    //   method: "POST",
+    //   body: formData
+    // });
+    // const data = await res.json();
     // console.log(data)
     this.props.toproy("/profile");
   }

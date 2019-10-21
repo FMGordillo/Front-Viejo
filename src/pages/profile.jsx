@@ -1,9 +1,20 @@
 import React, { Component } from "react";
 import ListaComponent from "../components/ListaReut";
 import Social from "./social";
+import { useAuth0 } from "../react-auth0-spa";
 
 class Profile extends Component {
+
   render() {
+    
+    const { loading, user } = useAuth0();
+  
+    if (loading || !user) {
+      return (
+        <div>Loading...</div>
+      );
+    }
+  
     return (
       <div>
         <div className="partners">
@@ -20,7 +31,7 @@ class Profile extends Component {
             <div className="gridPhoto">
               <div className="roundedPhoto colorTrial" />
               <div className="textList">
-                <h2>Hola Pepito!</h2>
+                <h2>Hola {user.name}</h2>
                 <p>Especialidad</p>
               </div>
             </div>

@@ -7,15 +7,15 @@ const MAIN_API = "http://localhost:4000";
  * TODO: Definir el shape del objeto
  * @param {Object} user
  */
-const createUser = user => ({
-  type: ADD_USER,
-  user
-});
+// const createUser = user => ({
+//   type: ADD_USER,
+//   user
+// });
 
-const createProject = project => ({
-  type: ADD_PROJECT,
-  project
-});
+// const createProject = project => ({
+//   type: ADD_PROJECT,
+//   project
+// });
 const setUser = user => ({
   type: SET_USER,
   user

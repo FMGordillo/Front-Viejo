@@ -78,11 +78,11 @@ const BackButton = styled.a`
   }
 `;
 
-const ContinueButton = styled.button`
-  ${MainInteractionButton}
-  color: #044087;
-  float: right;
-`;
+// const ContinueButton = styled.button`
+//   ${MainInteractionButton}
+//   color: #044087;
+//   float: right;
+// `;
 
 const LandingForm = () => {
   const [isOverlayOpen, setOverlay] = useState(false);

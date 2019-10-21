@@ -16,7 +16,7 @@ class PersonalDetails extends Component{
         e.preventDefault()
         const input = document.getElementsByClassName('boxList')
         // console.log(input.length)
-        if(input.length != 0){
+        if(input.length !== 0){
             // console.log('Continue')
             this.props.nextStep()
         }else{

@@ -13,7 +13,7 @@ class BioDetails extends Component{
         e.preventDefault()
         const input = document.getElementsByClassName('textarea')[0]
         // console.log(input)
-        if(input.value != ''){
+        if(input.value !== ''){
             // console.log('Continue')
             this.props.nextStep()
         }else{
