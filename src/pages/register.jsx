@@ -58,10 +58,16 @@ class MainForm extends Component {
     });
   }
   prevStep() {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1
-    });
+    const { step, type } = this.state;
+    if (type === "ORG") {
+      this.setState({
+        step: step - 2
+      });
+    } else {
+      this.setState({
+        step: step - 1
+      });
+    }
   }
 
   handleChange(event) {
@@ -75,9 +81,15 @@ class MainForm extends Component {
     }
     if (event.target.attributes.name.nodeValue === "type") {
       const { step } = this.state;
-      this.setState({
-        step: step + 1
-      });
+      if (event.target.attributes.value.value === "ORG") {
+        this.setState({
+          step: step + 2
+        });
+      } else {
+        this.setState({
+          step: step + 1
+        });
+      }
     }
   }
 
