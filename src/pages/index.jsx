@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import { useAuth0 } from "../react-auth0-spa";
 import partnersBN from "../img/partnersBN.svg";
 import styled, { css } from "styled-components";
 
@@ -87,6 +89,19 @@ const BackButton = styled.a`
 const LandingForm = () => {
   const [isOverlayOpen, setOverlay] = useState(false);
   const [isPopupOpen, setPopup] = useState(false);
+  const { getTokenSilently } = useAuth0();
+
+  const getUsers = async () => {
+    try {
+      const token = await getTokenSilently();
+      const res = axios.get("http://localhost:8081/api/users", {
+        headers: { Authorization: token }
+      });
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const registrarse = () => {
     setOverlay(true);
@@ -121,6 +136,7 @@ const LandingForm = () => {
         <div className="continuar" id="join-register" onClick={registrarse}>
           Quiero unirme
         </div>
+        <button onClick={() => getUsers()}>TEST</button>
       </div>
       <Modal
         cerrarPop={cerrarPop}
