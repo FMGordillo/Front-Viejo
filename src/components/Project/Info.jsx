@@ -1,30 +1,31 @@
 import React, { Component } from "react";
-import Congratulations from "../Project/Congratulations";
+import Felicitaciones from "./Congratulations";
 
-class TypeProy extends Component {
+class PitchDetails extends Component {
   constructor(props) {
     super(props);
 
     this.saveAndContinue = this.saveAndContinue.bind(this);
     this.back = this.back.bind(this);
-    this.enter = this.enter.bind(this);
   }
 
   saveAndContinue(e) {
     e.preventDefault();
-    this.props.nextStep();
+    const input = document.getElementsByClassName("textarea")[0];
+    // console.log(input)
+    if (input.value != "") {
+      // console.log('Continue')
+      this.props.nextStep();
+    } else {
+      // console.log('dont continue')
+      input.style.color = "red";
+      input.placeholder = "please, complete this";
+      input.style.borderBottomColor = "red";
+    }
   }
   back(e) {
     e.preventDefault();
     this.props.prevStep();
-  }
-
-  enter(e) {
-    e.preventDefault();
-    if (e.keyCode === 13) {
-      console.log("next");
-      document.getElementsByClassName("continuar")[0].click();
-    }
   }
 
   render() {
@@ -32,23 +33,22 @@ class TypeProy extends Component {
 
     return (
       <div>
-        <Congratulations />
+        <Felicitaciones />
         <form action="">
-          <p className="pregunta">3. LinkedIn</p>
-          <input
-            className="input"
+          <p className="pregunta">3. De que se trata {values.nameProy}? </p>
+          <textarea
+            className="textarea"
             type="text"
-            name="account"
+            name="infoProy"
             onChange={this.props.handleChange}
-            // onKeyDown = {this.enter}
-            defaultValue={values.account}
+            defaultValue={values.pitch}
           />
           <div>
             <button className="back" onClick={this.back}>
               Ver pregunta anterior
             </button>
             <button className="continuar" onClick={this.saveAndContinue}>
-              Siguiente Pregunta
+              Siguiente pregunta
             </button>
           </div>
         </form>
@@ -57,4 +57,4 @@ class TypeProy extends Component {
   }
 }
 
-export default TypeProy;
+export default PitchDetails;

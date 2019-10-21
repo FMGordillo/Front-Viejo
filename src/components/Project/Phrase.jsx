@@ -1,30 +1,31 @@
 import React, { Component } from "react";
-import Congratulations from "../Project/Congratulations";
+import Felicitaciones from "./Congratulations";
 
-class TypeProy extends Component {
+class PhraseProy extends Component {
   constructor(props) {
     super(props);
 
     this.saveAndContinue = this.saveAndContinue.bind(this);
     this.back = this.back.bind(this);
-    this.enter = this.enter.bind(this);
   }
 
   saveAndContinue(e) {
     e.preventDefault();
-    this.props.nextStep();
+    const input = document.getElementsByClassName("input")[0];
+    // console.log(input)
+    if (input.value !== "") {
+      // console.log('Continue')
+      this.props.nextStep();
+    } else {
+      // console.log('dont continue')
+      input.style.color = "red";
+      input.placeholder = "please, complete this";
+      input.style.borderBottomColor = "red";
+    }
   }
   back(e) {
     e.preventDefault();
     this.props.prevStep();
-  }
-
-  enter(e) {
-    e.preventDefault();
-    if (e.keyCode === 13) {
-      console.log("next");
-      document.getElementsByClassName("continuar")[0].click();
-    }
   }
 
   render() {
@@ -32,16 +33,15 @@ class TypeProy extends Component {
 
     return (
       <div>
-        <Congratulations />
+        <Felicitaciones />
         <form action="">
-          <p className="pregunta">3. LinkedIn</p>
+          <p className="pregunta">5. Contanos tu proyecto en una frase</p>
           <input
             className="input"
             type="text"
-            name="account"
+            name="phraseProy"
             onChange={this.props.handleChange}
-            // onKeyDown = {this.enter}
-            defaultValue={values.account}
+            defaultValue={values.email}
           />
           <div>
             <button className="back" onClick={this.back}>
@@ -57,4 +57,4 @@ class TypeProy extends Component {
   }
 }
 
-export default TypeProy;
+export default PhraseProy;

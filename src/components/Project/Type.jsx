@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Congratulations from "../Project/Congratulations";
+import Congratulations from "./Congratulations";
 
 class TypeProy extends Component {
   constructor(props) {
@@ -7,24 +7,25 @@ class TypeProy extends Component {
 
     this.saveAndContinue = this.saveAndContinue.bind(this);
     this.back = this.back.bind(this);
-    this.enter = this.enter.bind(this);
   }
 
   saveAndContinue(e) {
     e.preventDefault();
-    this.props.nextStep();
+    const input = document.getElementsByClassName("input")[0];
+    // console.log(input)
+    if (input.value !== "") {
+      // console.log('Continue')
+      this.props.nextStep();
+    } else {
+      // console.log('dont continue')
+      input.style.color = "red";
+      input.placeholder = "please, complete this";
+      input.style.borderBottomColor = "red";
+    }
   }
   back(e) {
     e.preventDefault();
     this.props.prevStep();
-  }
-
-  enter(e) {
-    e.preventDefault();
-    if (e.keyCode === 13) {
-      console.log("next");
-      document.getElementsByClassName("continuar")[0].click();
-    }
   }
 
   render() {
@@ -34,14 +35,13 @@ class TypeProy extends Component {
       <div>
         <Congratulations />
         <form action="">
-          <p className="pregunta">3. LinkedIn</p>
+          <p className="pregunta">2. Tipo de proyecto</p>
           <input
             className="input"
             type="text"
-            name="account"
+            name="typeProy"
             onChange={this.props.handleChange}
-            // onKeyDown = {this.enter}
-            defaultValue={values.account}
+            defaultValue={values.typeProy}
           />
           <div>
             <button className="back" onClick={this.back}>
