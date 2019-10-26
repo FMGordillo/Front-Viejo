@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import partnersBN from "../img/partnersBN.svg";
+import createAuth0Client,{useAuth0} from "@auth0/auth0-spa-js";
+import config from "../../auth_config.json";
+
 
 class LandingForm extends Component {
   constructor(props) {
@@ -25,11 +28,20 @@ class LandingForm extends Component {
     popup.classList.remove("active");
   }
 
+
+    async login(){
+      const res = await useAuth0().loginWithRedirect();
+      console.log(res)
+    }
+    
+
+
   render() {
     return (
       <div className="content">
         <div className="center">
           <img src={partnersBN} width="90px" height="35px" alt="Partners" />
+        <button id="login" className="continuar">Click to Login</button>
           <h1>
             Build together,
             <br />

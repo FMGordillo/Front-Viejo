@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Welcome from "./Welcome";
+import createAuth0Client from "@auth0/auth0-spa-js";
+import config from "../../auth_config.json";
 
-class EmailDetails extends Component{
+ class EmailDetails extends Component{
     constructor(props){
         super(props)
    
@@ -30,11 +32,13 @@ class EmailDetails extends Component{
         }
     }
 
+
     render(){
-        const {values}=this.props
-        
+      const {values}=this.props
+      
         return(
-        <div>
+          <div>
+        <button id="login" className="continuar">Click to Login</button>
             <Welcome/>
             <form action="">
                 <p className="pregunta">1. Confirmanos tu email</p>

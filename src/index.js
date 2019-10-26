@@ -24,9 +24,9 @@ const onRedirectCallback = appState => {
   );
 };
 
-if (process.env.NODE_ENV !== "production") {
-  axe(React, ReactDOM, 1000);
-}
+// if (process.env.NODE_ENV !== "production") {
+//   axe(React, ReactDOM, 1000);
+// }
 
 ReactDOM.render(
   <Provider store={store}>

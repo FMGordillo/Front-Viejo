@@ -3,7 +3,6 @@ import { useAuth0 } from "../react-auth0-spa";
 
 const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
-
   return (
     <div>
       {!isAuthenticated && (
@@ -19,6 +18,7 @@ const NavBar = () => {
       {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
     </div>
   );
+  
 };
 
 export default NavBar;
