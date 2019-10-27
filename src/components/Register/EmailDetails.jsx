@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Welcome from "./Welcome";
-// import createAuth0Client from "@auth0/auth0-spa-js";
+import createAuth0Client,{useAuth0} from "../../react-auth0-spa";
 // import config from "../../auth_config.json";
+
 
  class EmailDetails extends Component{
     constructor(props){
@@ -9,7 +10,6 @@ import Welcome from "./Welcome";
    
         this.saveAndContinue = this.saveAndContinue.bind(this)
       } 
-   
     
       saveAndContinue(e){
         e.preventDefault()
@@ -32,13 +32,11 @@ import Welcome from "./Welcome";
         }
     }
 
-
     render(){
       const {values}=this.props
       
         return(
           <div>
-        <button id="login" className="continuar">Click to Login</button>
             <Welcome/>
             <form action="">
                 <p className="pregunta">1. Confirmanos tu email</p>

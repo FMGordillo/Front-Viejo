@@ -8,6 +8,7 @@ import About from "../pages/about";
 import Social from "../pages/social";
 import Profile from "../pages/profile";
 import MainForm from "../pages/register";
+import LandingForm from "../components/LandingForm"
 
 import Project from "./Project";
 import HaveNeed from "./HaveNeed";
@@ -37,7 +38,7 @@ class MainRouter extends React.Component {
       "Acá va el componente de HOME, falta poner un ComponentDidMount que haga que cuando se carga el MainRouter pregunte si el usuario estÃ¡ registrado y logeado o no"
     ) : (
       <Switch>
-        <Route exact path="/" component={Landing} />
+        <Route exact path="/" component={LandingForm} /> {/*Decidir cual landing va a ir si LandingForm de compornents o landing de pages*/}
         <Route exact path="/info" component={Info} />
         <Route exact path="/about" component={About} />
         <Route exact path="/social" component={Social} />

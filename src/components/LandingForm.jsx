@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import {  Redirect } from "react-router-dom";
 import partnersBN from "../img/partnersBN.svg";
-import createAuth0Client,{useAuth0} from "@auth0/auth0-spa-js";
-import config from "../../auth_config.json";
-
+import {useAuth0} from "@auth0/auth0-spa-js";
+// import config from "../../auth_config.json";
+import NavBar from "./NavBar"
 
 class LandingForm extends Component {
   constructor(props) {
@@ -21,6 +21,10 @@ class LandingForm extends Component {
     popup.classList.add("active");
   }
 
+  // login(){
+  //   const some = useAuth0().isAuthenticated //Tratando de obtener el isAuthenticated para evaluar a donde redirigir
+  // }
+
   cerrarPop() {
     let overlay = document.getElementsByClassName("overlay")[0],
       popup = document.getElementsByClassName("popup")[0];
@@ -28,20 +32,13 @@ class LandingForm extends Component {
     popup.classList.remove("active");
   }
 
-
-    async login(){
-      const res = await useAuth0().loginWithRedirect();
-      console.log(res)
-    }
-    
-
-
   render() {
+    // {this.login()}
     return (
       <div className="content">
+              <NavBar/>
         <div className="center">
           <img src={partnersBN} width="90px" height="35px" alt="Partners" />
-        <button id="login" className="continuar">Click to Login</button>
           <h1>
             Build together,
             <br />
@@ -55,37 +52,10 @@ class LandingForm extends Component {
             feedback de otros emprendedores. Intercambiar conocimientos y
             promover una cultura colaborativa.
           </p>
-          <div
-            className="continuar "
-            id="join-register"
-            onClick={this.registrarse}>
-              Quiero unirme
-          </div>
+          <div className="continuar"
+          ><a href="/register" style={{textDecoration:"none", color:"white"}}>Quiero Unirme</a></div>
           <div className="back"
           >Quiero saber mas</div>
-        </div>
-
-        <div className="overlay">
-          <div className="popup">
-            <a
-              href="#"
-              id="btn-cerrar"
-              className="btn-cerrar"
-              onClick={this.cerrarPop}
-            >
-              <i className="fas fa-times"></i>
-            </a>
-            <a href="/auth/google">
-              <button className="loginBtn loginGoogle" id="google">
-                Registrate con Google
-              </button>
-            </a>
-            <a href="/auth/facebook">
-              <button className="loginBtn loginFacebook">
-                Registrate con Facebook
-              </button>
-            </a>
-          </div>
         </div>
       </div>
     );
