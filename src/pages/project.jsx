@@ -1,15 +1,9 @@
 import React from "react";
 import ListaComponent from "../components/ListaReut";
+import HaveNeed from "./haveNeed";
 import Social from "./social";
-import { useAuth0 } from "../react-auth0-spa";
 
 function Profile() {
-  const { loading, user } = useAuth0();
-
-  if (loading || !user) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div>
       <div className="partners">
@@ -26,7 +20,7 @@ function Profile() {
           <div className="gridPhoto">
             <div className="roundedPhoto colorTrial" />
             <div className="textList">
-              <h2>Hola {user.name}</h2>
+              <h2>Mupey</h2>
               <p>Especialidad</p>
             </div>
           </div>
@@ -40,15 +34,13 @@ function Profile() {
           {Social({})}
         </div>
         <div className="aside">
-          <div className="Box-content">
-            {ListaComponent({
-              list: ["a", "b", "c", "d"],
-              title: "Proyectos"
-            })}
-          </div>
+          <div className="Box-content">{HaveNeed({})}</div>
         </div>
 
         <div className="aside2">
+          <div className="Box-content">
+            {ListaComponent({ title: "Estado del \r\nproyecto" })}
+          </div>
           <div className="Box-content">
             {ListaComponent({
               list: ["a", "b", "c", "d"],
