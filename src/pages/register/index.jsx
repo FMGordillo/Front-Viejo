@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Success from "../components/Register/Success";
-import BioDetails from "../components/Register/BioDetails";
-import UserDetails from "../components/Register/UserDetails";
-import TypeDetails from "../components/Register/TypeDetails";
-import EmailDetails from "../components/Register/EmailDetails";
-import Confirmation from "../components/Register/Confirmation";
-import PitchDetails from "../components/Register/PitchDetails";
-import AccountDetails from "../components/Register/AccountsDetails";
-import PersonalDetails from "../components/Register/PersonalDetails";
-
-// import "../../../back/public/style.css";
+import {
+  Success,
+  BioDetails,
+  UserDetails,
+  TypeDetails,
+  EmailDetails,
+  Confirmation,
+  PitchDetails,
+  AccountDetails,
+  PersonalDetails
+} from "../../components/Register";
 
 class MainForm extends Component {
   constructor(props) {
@@ -73,8 +73,8 @@ class MainForm extends Component {
   handleChange(event) {
     // console.log(this.state);
     // console.log(event.target.attributes.value)
-    event.target.style.color= 'black'
-    event.target.style.borderBottomColor= 'black'
+    event.target.style.color = "black";
+    event.target.style.borderBottomColor = "black";
     if (event.target.type !== "checkbox") {
       this.setState({
         [event.target.attributes.name.nodeValue]: event.target.value
