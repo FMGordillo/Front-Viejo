@@ -268,6 +268,68 @@ body {
   margin: 0.5em;
   font-family: "Nunito";
 }
+
+.saveInterest {
+  background-color: transparent;
+  border: transparent;
+}
+.saveInterest:before {
+  color: #ef4166;
+  content: "\f055";
+  font-size: 1.85em;
+  font-family: "FontAwesome";
+}
+
+.uploadFile {
+  background-color: transparent;
+  border: transparent;
+}
+.uploadFile:before {
+  color: #ef4166;
+  content: "\f093";
+  font-size: 1.85em;
+  font-family: "FontAwesome";
+}
+
+.inputFile {
+  height: 45px;
+  width: 331px;
+  background-color: #fbfbff;
+  box-shadow: 0 2px 10px 0 #ededed;
+  border: transparent;
+  display: none;
+}
+
+.subir {
+  height: 45px;
+  width: 331px;
+  background-color: #fbfbff;
+  box-shadow: 0 2px 10px 0 #ededed;
+  border: transparent;
+  text-align: center;
+  display: inline-block;
+  color: #044087;
+  font-size: 14px;
+  font-family: "Helvetica";
+}
+
+.gridPhoto {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  padding-left: 2%;
+  margin-bottom: 2%;
+}
+
+.colorTrial {
+  background-color: purple;
+}
+
+.roundedPhoto {
+  border-radius: 50%;
+  height: 5em;
+  width: 5em;
+  justify-self: center;
+}
 /*
 .bienvenido {
   font-family: "Nunito";
@@ -357,69 +419,7 @@ option[selected] {
   line-height: 24px;
   font-family: "Nunito";
 }
-*/
-.saveInterest {
-  background-color: transparent;
-  border: transparent;
-}
-.saveInterest:before {
-  color: #ef4166;
-  content: "\f055";
-  font-size: 1.85em;
-  font-family: "FontAwesome";
-}
 
-.uploadFile {
-  background-color: transparent;
-  border: transparent;
-}
-.uploadFile:before {
-  color: #ef4166;
-  content: "\f093";
-  font-size: 1.85em;
-  font-family: "FontAwesome";
-}
-
-.inputFile {
-  height: 45px;
-  width: 331px;
-  background-color: #fbfbff;
-  box-shadow: 0 2px 10px 0 #ededed;
-  border: transparent;
-  display: none;
-}
-
-.subir {
-  height: 45px;
-  width: 331px;
-  background-color: #fbfbff;
-  box-shadow: 0 2px 10px 0 #ededed;
-  border: transparent;
-  text-align: center;
-  display: inline-block;
-  color: #044087;
-  font-size: 14px;
-  font-family: "Helvetica";
-}
-
-.gridPhoto {
-  display: grid;
-  grid-template-columns: 0.3fr 0.7fr;
-  padding-left: 2%;
-  margin-bottom: 2%;
-}
-
-.colorTrial {
-  background-color: purple;
-}
-
-.roundedPhoto {
-  border-radius: 50%;
-  height: 5em;
-  width: 5em;
-  justify-self: center;
-}
-/*
 .pitchProyecto {
   height: 56px;
   width: 617px;

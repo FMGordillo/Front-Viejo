@@ -1,17 +1,21 @@
 import React, {Component} from 'react'
+import { useAuth0 } from "../../react-auth0-spa";
 
-class Welcome extends Component{
-
-    render(){
-
+function Welcome(){
+    
+    
+    const { user } = useAuth0();
+    console.log(user)
+    
+    
         return(
         <div>
             <h1 className="bienvenido">Bienvenido!</h1>
-            <p className="name">*Tu nombre*</p>
+            <p className="name">{user?user.name:''}</p>
             <p className="conocernos">Completa los siguientes datos para conocernos mejor</p>
         </div>
         )
-    }
+    
 
 
 }
