@@ -20,8 +20,8 @@ class TypeProy extends Component {
   }
 
   enter(e) {
-    e.preventDefault();
     if (e.keyCode === 13) {
+      e.preventDefault();
       console.log("next");
       document.getElementsByClassName("continuar")[0].click();
     }
@@ -40,7 +40,7 @@ class TypeProy extends Component {
             type="text"
             name="account"
             onChange={this.props.handleChange}
-            // onKeyDown = {this.enter}
+            onKeyDown = {this.enter}
             defaultValue={values.account}
           />
           <div>

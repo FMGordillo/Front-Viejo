@@ -32,9 +32,9 @@ function LandingForm() {
           feedback de otros emprendedores. Intercambiar conocimientos y promover
           una cultura colaborativa.
         </p>
-        <Link to="/register" style={{ textDecoration: "none", color: "white" }}>
-          <div className="continuar">Quiero Unirme</div>
-        </Link>
+        {/* <Link to="/register" style={{ textDecoration: "none", color: "white" }}> */}
+          <div className="continuar" onClick={() => loginWithRedirect()}>Quiero Unirme</div>
+        {/* </Link> */}
         <div className="back">Quiero saber mas</div>
       </div>
     </div>

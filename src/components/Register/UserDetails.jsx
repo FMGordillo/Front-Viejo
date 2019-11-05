@@ -31,13 +31,11 @@ class UserDetails extends Component{
     }
 
     enter(e){
-
-        e.preventDefault();
         if (e.keyCode === 13) {
+            e.preventDefault();
             console.log('next')
             document.getElementsByClassName("continuar")[0].click();
         }
-
     }
 
 
@@ -54,7 +52,7 @@ class UserDetails extends Component{
                 type="name"
                 name='user'
                 onChange={this.props.handleChange}
-                // onKeyDown = {this.enter}
+                onKeyDown = {this.enter}
                 defaultValue={values.user} />
                 <div>
                     <button className="back" onClick={this.back} >Ver pregunta anterior</button>

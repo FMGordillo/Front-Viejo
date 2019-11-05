@@ -53,7 +53,7 @@ class PersonalDetails extends Component{
             return(
             <div key={i} className="boxList">
             <p className="textList"
-            >{interest}</p>
+            >#{interest}</p>
             </div>)
        })
 
