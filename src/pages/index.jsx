@@ -1,12 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
 import partnersBN from "../img/partnersBN.svg";
+import { useAuth0 } from "../react-auth0-spa";
 import NavBar from "../components/NavBar";
 
 function LandingForm() {
+  const { loading, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  
+  function loggin(){
+   if(isAuthenticated){
+      return <Redirect to="/register" />
+   }
+  }
+
   return (
     <div className="content">
       <NavBar />
+      {loggin()}
       <div className="center">
         <img src={partnersBN} width="90px" height="35px" alt="Partners" />
         <h1>
@@ -22,9 +32,9 @@ function LandingForm() {
           feedback de otros emprendedores. Intercambiar conocimientos y promover
           una cultura colaborativa.
         </p>
-        <Link to="/register" style={{ textDecoration: "none", color: "white" }}>
-          <div className="continuar">Quiero Unirme</div>
-        </Link>
+        {/* <Link to="/register" style={{ textDecoration: "none", color: "white" }}> */}
+          <div className="continuar" onClick={() => loginWithRedirect()}>Quiero Unirme</div>
+        {/* </Link> */}
         <div className="back">Quiero saber mas</div>
       </div>
     </div>

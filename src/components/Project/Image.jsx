@@ -61,19 +61,20 @@ class ImageProy extends Component {
         <Felicitaciones />
         <form>
           <p className="pregunta">4. Subi una imagen</p>
-          <input
-            className="inputFile"
-            id="fileUpload"
-            type="file"
-            name="imageProy"
-            accept="image/*"
-            onChange={this.save}
-          />
+          <div className="divInterest">
+            <input
+              className="inputFile"
+              id="fileUpload"
+              type="file"
+              name="imageProy"
+              accept="image/*"
+              onChange={this.save}
+            />
 
-          <label htmlFor="fileUpload" id="value" className="subir"></label>
-          <label htmlFor="fileUpload" className="uploadFile"></label>
-          {/* <button className="uploadFile" onClick={this.save}></button> */}
-
+            <label htmlFor="fileUpload" id="value" className="inputInterest"></label>
+            <label htmlFor="fileUpload" className="uploadFile"></label>
+            {/* <button className="uploadFile" onClick={this.save}></button> */}
+          </div>
           <br />
           {/* {list} */}
 

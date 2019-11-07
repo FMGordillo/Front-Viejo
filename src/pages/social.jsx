@@ -5,7 +5,7 @@ function Social() {
   return (
     <div className="box">
       <span>
-        <Link to="https://www.facebook.com" target="_blank">
+        <Link to="https://www.facebook.com" target="_blank">{/*Me lleva al localhost:3000/https://www.facebook.com */}
           <img alt="FB" src="/public/facebook-app-symbol.svg">
             {/* {" "} */}
           </img>

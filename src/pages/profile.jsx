@@ -24,18 +24,13 @@ function Profile() {
       <div className="content">
         <div className="center">
           <div className="gridPhoto">
-            <div className="roundedPhoto colorTrial" />
+            <img className="roundedPhoto" src={user?user.picture:''} alt=""/>
             <div className="textList">
-              <h2>Hola {user.name}</h2>
-              <p>Especialidad</p>
+              <h2>{user.name}</h2>
             </div>
           </div>
           <p>
-            Partners es una red social colaborativa que conecta emprendedores
-            con ganas de crecer y y potenciar sus proyectos. En este espacio vas
-            a poder compartir tus proyectos, dar y recibir feedback de otros
-            emprendedores. Intercambiar conocimientos y promover una cultura
-            colaborativa.
+            {/*user.BioDetails */} Aca va mi presentacion de usuario
           </p>
           {Social({})}
         </div>

@@ -7,7 +7,7 @@ import createAuth0Client,{useAuth0} from "../../react-auth0-spa";
  class EmailDetails extends Component{
     constructor(props){
         super(props)
-   
+        //this.user = useAuth0().user
         this.saveAndContinue = this.saveAndContinue.bind(this)
       } 
     
@@ -17,7 +17,7 @@ import createAuth0Client,{useAuth0} from "../../react-auth0-spa";
         // console.log(input)
         if(input.value !== ''){
             // console.log('Continue')
-            if (/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)$/i.test(input.value)){
+            if (/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail)\.(?:|com|es)$/i.test(input.value) /*&& input.value === this.user.email*/){
             this.props.nextStep()
             }else{
                 input.style.color = 'red'

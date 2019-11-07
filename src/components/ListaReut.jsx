@@ -7,11 +7,11 @@ export default ({ list = [], title }) => (
     {list.map((item, key) => (
       <div key={key++} className="gridPhoto">
         <div className="roundedPhoto colorTrial" />
+        {/*Aca iria item.picture */}
         <div className="textList">
-          <h2>Nombre de la Cosa</h2>
-          <h2>{item}</h2>
+          <h3>{item}</h3>{/*Procurar que el item sea un objeto para poder entrar a cada
+          uno de sus atributos */}
 
-          <p>Especialidad</p>
         </div>
       </div>
     ))}
