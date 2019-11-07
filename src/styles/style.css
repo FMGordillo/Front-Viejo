@@ -166,8 +166,23 @@ body {
 .saveInterest:before {
   color: #000;
   content: "\f067";
-  font-size: 1.85em;
+  font-size: 1.1em;
   font-family: "FontAwesome";
+}
+
+.divInterest{
+  border-bottom: 1px solid
+  #333333;
+  display: inline-block;
+  margin-bottom: 1.1em;
+}
+
+.inputInterest{
+  border: 0;
+  width: 300px;
+  font-weight: 600;
+  padding: 0 0 10px 0;
+  display: inline-block;
 }
 
 .uploadFile {
@@ -175,9 +190,9 @@ body {
   border: transparent;
 }
 .uploadFile:before {
-  color: #ef4166;
+  color: #000;
   content: "\f093";
-  font-size: 1.85em;
+  font-size: 1.45em;
   font-family: "FontAwesome";
 }
 

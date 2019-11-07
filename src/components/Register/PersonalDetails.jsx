@@ -62,14 +62,15 @@ class PersonalDetails extends Component{
             <Welcome/>
             <form>
                 <p className="pregunta">7.Cuales son tus principales intereses?</p>
+                <div className="divInterest">
                 <input 
-                className="input"
+                className="inputInterest"
                 id="inpInt"
                 type="text"
                 onChange = {this.onChange}
                 />
                 <button className="saveInterest" onClick={this.save}></button>
-
+                </div>
                 <br/>
                 {list}
                 
