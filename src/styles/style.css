@@ -3,6 +3,21 @@
 @import url("_buttons.css");
 @import url("_grids.css");
 
+.react-transition-enter {
+  opacity: 0;
+}
+.react-transition-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+.react-transition-exit {
+  opacity: 1;
+}
+.react-transition-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
 i {
   font-family: "FontAwesome";
 }
@@ -142,7 +157,8 @@ body {
   margin: 0.5em;
   font-family: "Nunito";
 }
-*/.boxList {
+*/
+.boxList {
   position: relative;
   background: #eee;
   text-align: center;
@@ -170,14 +186,13 @@ body {
   font-family: "FontAwesome";
 }
 
-.divInterest{
-  border-bottom: 1px solid
-  #333333;
+.divInterest {
+  border-bottom: 1px solid #333333;
   display: inline-block;
   margin-bottom: 1.1em;
 }
 
-.inputInterest{
+.inputInterest {
   border: 0;
   width: 300px;
   font-weight: 600;
@@ -269,7 +284,7 @@ body {
 
 .continuar {
   /* height: 72px;
-    width: 82px; *//*
+    width: 82px; */ /*
   color: #044087;
   font-size: 18px;
   line-height: 36px;
@@ -281,7 +296,7 @@ body {
 .continuar:after {
   padding-left: 1em;
   /* border: solid 1px #9e9e9e;
-    border-radius:50%; *//*
+    border-radius:50%; */ /*
   color: #ef4166;
   content: "\f061";
   font-family: "FontAwesome";
@@ -289,7 +304,7 @@ body {
 
 .back {
   /* height: 72px;
-    width: 82px; *//*
+    width: 82px; */ /*
   color: #9b9b9b;
   font-size: 18px;
   line-height: 36px;
@@ -301,7 +316,7 @@ body {
 .back:before {
   padding-right: 1em;
   /* border: solid 1px #9e9e9e;
-    border-radius:50%; *//*
+    border-radius:50%; */ /*
   color: #9b9b9b;
   content: "\f060";
   font-family: "FontAwesome";
@@ -317,7 +332,7 @@ option[selected] {
 
 .claseProyecto {
   /* height: 48px;
-    	width: 273px; *//*
+    	width: 273px; */ /*
   color: #333333;
   font-size: 14px;
   font-style: italic;
@@ -345,18 +360,18 @@ option[selected] {
 
 .queTengo {
   /* height: 120px;
-    	width: 225px; *//*
+    	width: 225px; */ /*
   color: rgb(163, 130, 130);
   font-size: 14px;
-  /* line-height: 30px; *//*
+  /* line-height: 30px; */ /*
   font-family: "Nunito";
 }
 .queNecesito {
   /* height: 120px;
-    	width: 225px; *//*
+    	width: 225px; */ /*
   color: #4a4a4a;
   font-size: 14px;
-  /* line-height: 30px; *//*
+  /* line-height: 30px; */ /*
   font-family: "Nunito";
 }
 
@@ -534,7 +549,7 @@ li {
 
 .pregunta {
   height: 22px;
-  /*width: 171px;*//*
+  /*width: 171px;*/ /*
   color: #9b9b9b;
   font-family: "Helvetica";
   font-size: 18px;
@@ -622,7 +637,7 @@ li {
   color: #ffffff;
   font-size: 36px;
   line-height: 40px;
-  /*text-Align:center;*//*
+  /*text-Align:center;*/ /*
   margin: auto;
   font-family: "Nunito";
 }
@@ -634,7 +649,7 @@ li {
   font-size: 14px;
   line-height: 20px;
   /*text-Align:center;
-    *//*
+    */ /*
   margin: auto;
   margin-top: 20px;
   font-family: "Nunito";
@@ -642,7 +657,7 @@ li {
 
 .rectangleComenzar {
   height: 44px;
-  /* width: 288px; *//*
+  /* width: 288px; */ /*
   border: 2px solid #ef4166;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0);
