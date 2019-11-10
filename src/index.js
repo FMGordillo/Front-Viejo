@@ -1,5 +1,5 @@
 import React from "react";
-import axe from "react-axe";
+// import axe from "react-axe";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "./react-auth0-spa";
