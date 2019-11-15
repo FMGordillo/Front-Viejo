@@ -1,19 +1,18 @@
 import React from "react";
-import axe from "react-axe";
+// import axe from "react-axe";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { Auth0Provider } from "./react-auth0-spa";
+
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "@apollo/react-hooks";
+
 import config from "./auth_config.json";
-
 import Main from "./components/MainRouter";
-
-import store from "./redux/store";
 
 /**
  * TODO: Audit -> visible inside Chrome Devtools (F12) or Console
  */
-
 const onRedirectCallback = appState => {
   window.history.replaceState(
     {},
@@ -24,15 +23,22 @@ const onRedirectCallback = appState => {
   );
 };
 
+const client = new ApolloClient({
+  uri: process.env.BACKEND_URL || "http://localhost:4000",
+  request: operation => {
+    operation.setContext({ fetchOptions: { credentials: "include" } });
+  }
+});
+
 // if (process.env.NODE_ENV !== "production") {
 //   axe(React, ReactDOM, 1000);
 // }
 
 ReactDOM.render(
-  <Provider store={store}>
+  <ApolloProvider client={client}>
     <Auth0Provider
-      domain={config.domain}
-      client_id={config.clientId}
+      domain={process.env.AUTH0_DOMAIN}
+      client_id={process.env.AUTH0_CLIENTID}
       redirect_uri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
     >
@@ -40,6 +46,6 @@ ReactDOM.render(
         <Main />
       </BrowserRouter>
     </Auth0Provider>
-  </Provider>,
+  </ApolloProvider>,
   document.getElementById("app")
 );

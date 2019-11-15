@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import { Route, Switch, useHistory } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -17,7 +16,6 @@ import PrivateRoute from "./PrivateRoute";
 
 import ListaComponent from "./ListaReut";
 import "../styles/style.css";
-import { fetchUser, getAllUsers } from "../redux/actions/index";
 // import { useAuth0 } from "../react-auth0-spa"
 
 const duration = 300;
@@ -66,16 +64,4 @@ function MainRouter(props) {
   );
 }
 
-const mapStateToProps = state => ({
-  user: state.user,
-  users: state.users
-});
-const mapDispatchToProps = dispatch => ({
-  fetchUser: () => dispatch(fetchUser()),
-  getAllUsers: () => dispatch(getAllUsers())
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MainRouter);
+export default MainRouter;

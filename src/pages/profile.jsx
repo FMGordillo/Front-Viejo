@@ -1,12 +1,24 @@
 import React from "react";
-import ListaComponent from "../components/ListaReut";
 import Social from "./social";
 import { useAuth0 } from "../react-auth0-spa";
+import ListaComponent from "../components/ListaReut";
+
+import { gql } from "apollo-boost";
+import { useQuery } from "@apollo/react-hooks";
+
+const GET_PROJECTS = gql`
+  {
+    projects {
+      name
+    }
+  }
+`;
 
 function Profile() {
-  const { loading, user } = useAuth0();
+  const { loading: loadingAuth0, user } = useAuth0();
+  const { loading, data, error } = useQuery(GET_PROJECTS);
 
-  if (loading || !user) {
+  if (loadingAuth0 || !user) {
     return <div>Loading...</div>;
   }
 
@@ -24,14 +36,16 @@ function Profile() {
       <div className="content">
         <div className="center">
           <div className="gridPhoto">
-            <img className="roundedPhoto" src={user?user.picture:''} alt=""/>
+            <img
+              className="roundedPhoto"
+              src={user ? user.picture : ""}
+              alt=""
+            />
             <div className="textList">
               <h2>{user.name}</h2>
             </div>
           </div>
-          <p>
-            {/*user.BioDetails */} Aca va mi presentacion de usuario
-          </p>
+          <p>{/*user.BioDetails */} Aca va mi presentacion de usuario</p>
           {Social({})}
         </div>
         <div className="aside">
