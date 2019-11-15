@@ -24,7 +24,7 @@ const onRedirectCallback = appState => {
 };
 
 const client = new ApolloClient({
-  uri: "https://api-parters-dev.herokuapp.com/",
+  uri: process.env.BACKEND_URL || "http://localhost:4000",
   request: operation => {
     operation.setContext({ fetchOptions: { credentials: "include" } });
   }
@@ -37,8 +37,8 @@ const client = new ApolloClient({
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Auth0Provider
-      domain={config.domain}
-      client_id={config.clientId}
+      domain={process.env.AUTH0_DOMAIN}
+      client_id={process.env.AUTH0_CLIENTID}
       redirect_uri={window.location.origin}
       onRedirectCallback={onRedirectCallback}
     >
