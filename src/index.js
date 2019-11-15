@@ -7,7 +7,6 @@ import { Auth0Provider } from "./react-auth0-spa";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "@apollo/react-hooks";
 
-import config from "./auth_config.json";
 import Main from "./components/MainRouter";
 
 /**
